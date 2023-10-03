@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+apiRestApplication: com.practico.apiRest.apiRestApplication
+
