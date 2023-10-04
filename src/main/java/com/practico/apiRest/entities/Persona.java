@@ -14,11 +14,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Persona implements Serializable {
+public class Persona extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "apellido")

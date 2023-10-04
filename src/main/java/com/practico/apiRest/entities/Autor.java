@@ -14,14 +14,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Autor implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Autor extends Base {
+
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "apellido")
     private String apellido;
-    @Column(name = "biografia")
+    @Column(name = "biografia", length = 1500)
     private String biografia;
 }
