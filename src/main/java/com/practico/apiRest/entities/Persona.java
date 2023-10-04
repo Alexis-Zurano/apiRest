@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "persona")
@@ -22,4 +22,15 @@ public class Persona extends Base {
     private String apellido;
     @Column(name = "dni")
     private int dni;
+    @JoinColumn(name = "fk_domicilio")
+    @OneToOne(cascade = CascadeType.ALL)
+    private Domicilio domicilio;
+    @JoinTable(
+            name = "persona_libro",
+            joinColumns = @JoinColumn(name = "persona_id"),
+            inverseJoinColumns = @JoinColumn(name = "libro_id")
+    )
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Libro> libros = new ArrayList<Libro>();
+
 }

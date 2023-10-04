@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "libro")
@@ -26,4 +25,6 @@ public class Libro extends Base {
     private int paginas;
     @Column(name = "autor")
     private String autor;
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    private List<Autor> autores;
 }

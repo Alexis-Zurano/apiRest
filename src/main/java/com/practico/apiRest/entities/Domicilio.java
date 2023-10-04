@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
-
 @Entity
 @Table(name = "domicilio")
 @NoArgsConstructor
@@ -20,4 +18,8 @@ public class Domicilio extends Base {
     private String calle;
     @Column(name = "numero")
     private int numero;
+    @JoinColumn(name = "fk_localidad")
+    @ManyToOne(optional = false)
+    private Localidad localidad;
+
 }
