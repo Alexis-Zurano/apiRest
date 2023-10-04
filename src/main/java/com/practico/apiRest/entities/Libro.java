@@ -23,8 +23,6 @@ public class Libro extends Base {
     private String genero;
     @Column(name = "paginas")
     private int paginas;
-    @Column(name = "autor")
-    private String autor;
     @ManyToMany(cascade = CascadeType.REFRESH)
     private List<Autor> autores;
 }
