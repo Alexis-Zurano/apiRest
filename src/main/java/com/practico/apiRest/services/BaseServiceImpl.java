@@ -54,7 +54,7 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
         try {
             Optional<E> entityOptional = baseRepository.findById(id);
             E e = entityOptional.get();
-            e  = baseRepository.save(e);
+            e = baseRepository.save(entity);
             return e;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
